@@ -15,10 +15,16 @@ def main():
                         required=True,
                         help="name of the text file with a list of emails that \
                               the email should send to")
-    parser.add_argument("-e", "--email",
-                        required=True,
-                        help="name of the text file that includes the \
-                              subject and the message")
+    parser.add_argument("-b", "--body",
+                        default="This is a test to validate your email address. Please \
+                                  disregard this message.",
+                        help="email body plain text")
+    parser.add_argument("-s", "--smtp-server",
+                        default='smtp.gmail.com',
+                        help="SMTP server")
+    parser.add_argument("-p", "--smtp-port",
+                        default=587,
+                        help="SMTP server port")
     args = parser.parse_args()
 
     sender = args.sendfrom
