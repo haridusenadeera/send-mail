@@ -30,11 +30,11 @@ def readMailList(file):
 
 # reads a text file and returns a list with the subject and the message
 def readMessage(file):
-  message = {}
+  message = []
   with open(os.path.join(file)) as f:
     for line in f:
         parts = line.split(': ')
-        message = [parts[0], parts[1]]
+        message.extend([parts[0], parts[1]])
   return message
 
 # sends the email
