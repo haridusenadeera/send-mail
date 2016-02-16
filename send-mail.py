@@ -48,16 +48,6 @@ def read_mail_list(file):
     return mail_list
 
 
-# reads a text file and returns a list with the subject and the message
-def read_message(file):
-    message = []
-    with open(os.path.join(file)) as f:
-        for line in f:
-            parts = line.split(': ')
-            message.extend([parts[0], parts[1]])
-    return message
-
-
 # sends the email
 def send_email(sender, mail_list, body, smtp_server, smtp_port):
     msg = MIMEMultipart()
