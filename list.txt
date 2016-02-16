@@ -1,0 +1,4 @@
+example@gmail.com
+john.smith@gmail.com
+example@yahoo.com
+example@hotmail.com
